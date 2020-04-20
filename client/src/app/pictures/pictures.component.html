@@ -1,0 +1,9 @@
+<div class="example-container">
+    <h2>Pictures List</h2>
+    <div class="example-loading-shade" *ngIf="isLoadingResults">
+    </div>
+    <div  *ngFor="let picture of pictures">
+      <p>{{picture.name}}</p>
+      <p>{{picture.description}}</p>
+    </div>
+  </div>

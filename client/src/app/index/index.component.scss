@@ -1,0 +1,99 @@
+.pageOption {
+    overflow: hidden;
+    position:fixed;
+    padding:0;
+    margin:0;
+    top:0;
+    left:0; 
+    width: 100%; 
+    height: 100%;
+}
+
+.option{
+    overflow: hidden;
+    position: absolute;
+}
+.option, .option img { 
+    width: 100%; 
+    height: 100%;
+    object-fit : cover;
+}
+.option img { 
+    opacity: .10; 
+    z-index: -1;
+}
+
+.option:first-child {
+    background-color: #000000;
+    left: -30%;
+    transform-origin: 0 100%;
+}
+.option:last-child {
+    right: -40%;
+    transform-origin: 100% 0;
+    background-color: #dbdbdb;
+    
+    .texture{
+        width: 100%; 
+        height: 100%;
+        background-image: url(../../assets/images/honeycomb-small.png);
+        background-repeat: repeat;
+        opacity: .03;
+    }
+}
+.option img, .option div, .option:after {
+    transform-origin: inherit;
+}
+
+.info-layer{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0; 
+    left: 0;
+    margin: 0;
+
+    font-family: 'Permanent Marker', cursive !important;
+}
+.title{
+    color: white;
+    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: fit-content;
+
+    padding-left: 5vw;
+
+    h1{
+        font-size: 4em;
+        line-height: 0.9em;
+        margin-top: 20vh;
+        font-family: 'Permanent Marker', cursive !important;
+    }
+    img{
+        height: 7em;
+        width: 7em;
+        margin-top: 15vh;
+        filter: brightness(1000%);
+    }
+}
+@media only screen and (max-width:734px){
+    .title{
+        align-items: flex-start;
+    }       
+}
+.description{
+    color: #2d2d2d;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    padding-right: 5vw;
+    h2{
+        font-size: 1.8em;
+        margin-top: 12vh;
+        font-family: 'Permanent Marker', cursive !important;
+    }
+}
