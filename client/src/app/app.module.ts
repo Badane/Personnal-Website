@@ -7,17 +7,19 @@ import { HttpClientModule } from '@angular/common/http';
 
 //Components
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PicturesComponent } from './pictures/pictures.component';
 import { PicturesDetailsComponent } from './pictures-details/pictures-details.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IndexComponent } from './index/index.component';
+import { TopMenuComponent } from './top-menu/top-menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PicturesComponent,
     PicturesDetailsComponent,
-    IndexComponent
+    IndexComponent,
+    TopMenuComponent
   ],
   imports: [
     BrowserModule,
