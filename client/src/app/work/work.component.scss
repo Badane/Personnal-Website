@@ -1,0 +1,66 @@
+ @import "../../variables.scss";
+
+.subtitle{
+    margin-top: 3em;
+    text-align: center;
+    text-transform: uppercase;
+}
+.description{
+    display: flex;
+    align-items: center;
+    margin-top: 5em;
+    font-size: 0.6em;
+    .des-left{
+        text-align: right;
+        border-right: 2px solid #000;
+        margin-right: 0;
+    }
+    div{
+        padding: 0 5vw 4em 5vw;
+        display: inline-block;
+    }
+    a{
+        text-decoration: none;
+        color:#212529;
+        border-bottom: 2px solid lightgrey;
+        border-radius: 4px;
+        
+        &:hover{
+            color:$mainRed;
+            border-bottom: 0px solid lightgrey;
+            text-shadow: 0 -1px 0 darkgrey,0 -2px 0 lightgrey,2px 2px 1px lightgrey, 4px 4px 1px lightgrey!important;
+        }
+    }
+} 
+
+.description-buttons{
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+    div{
+        display: inline-block;
+    }
+    .border-mid{
+        border-right: 2px solid #000;
+    }
+    .border-top{
+        border-top: 2px solid #000;
+    }
+    .middle-line div{
+        color: #fff;
+    }
+    .custom-button{
+        display: flex;
+        align-items: center;
+    }
+    .custom-button.left {
+        justify-content: flex-end;
+    }
+    span{
+        padding: 0.1em 2em;
+        border: 2px solid #000;
+        img{
+            height: 1.5em;
+        }
+    }
+} 

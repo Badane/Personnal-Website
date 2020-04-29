@@ -14,13 +14,11 @@ $iteration: 1;
   left:0; 
   width: 100%; 
   height: 100%;
-  background: rgba($blue, .1);
-  transition: 1.5s $easing;
 }
-.background--on {
-  background: rgba($pink,.1);
-  transition: 1.5s $easing;
-}
+// .background--on {
+//   background: rgba($pink,.1);
+//   transition: 1.5s $easing;
+// }
 .toggle-body {
   width: 9rem;
   height: 4rem;
@@ -96,6 +94,8 @@ $iteration: 1;
   overflow: visible;
   text-align: justify;
   margin-left: 5vw;
+  font-size: 0.6em;
+  padding-bottom: 30vh;
 }
 
 .content{
