@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { PicturesComponent } from './pictures/pictures.component';
 import { PicturesDetailsComponent } from './pictures-details/pictures-details.component';
 import { IndexComponent } from './index/index.component';
+import { AboutComponent } from './about/about.component';
+import { WorkComponent } from './work/work.component';
 
 
 const routes: Routes = [
@@ -12,15 +14,25 @@ const routes: Routes = [
     data: { title: 'Main page' }
   },
   {
-    path: 'photos',
-    component: PicturesComponent,
-    data: { title: 'List of Pictures' }
+    path: 'about',
+    component: AboutComponent,
+    data: { title: 'About Me' }
   },
   {
-    path: 'photos/:id',
-    component: PicturesDetailsComponent,
-    data: { title: 'Pictures Details' }
+    path: 'work',
+    component: WorkComponent,
+    data: { title: 'My work' }
+  },
+  {
+    path: 'pictures',
+    component: PicturesComponent,
+    data: { title: 'List of Pictures' }
   }
+  // {
+  //   path: 'photos/:id',
+  //   component: PicturesDetailsComponent,
+  //   data: { title: 'Pictures Details' }
+  // }
 ];
 
 @NgModule({

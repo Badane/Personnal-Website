@@ -1,15 +1,17 @@
 <div class="top-menu">
     <div>
         <nav>
-            <a href="#">DB</a>
+            <a [routerLink]="['/']" class="home-button">
+                <img src="../../assets/images/logoBlancfff.png" alt="home-button">
+            </a>
             <ul>
-                <li><a href="#">A propos</a></li>
-                <li><a href="#">Travail</a></li>
-                <li><a href="#">Photos</a></li>
+                <li><a [routerLink]="['about']" [routerLinkActive]="['active-link']" [routerLinkActiveOptions]="{exact: true}">A propos</a></li>
+                <li><a [routerLink]="['work']" [routerLinkActive]="['active-link']" [routerLinkActiveOptions]="{exact: true}">Travail</a></li>
+                <li><a [routerLink]="['pictures']" [routerLinkActive]="['active-link']">Photos</a></li>
             </ul>
         </nav>
     </div>
 </div>
-<div class="content">
+<div class="content-bloc">
     <router-outlet></router-outlet>
 </div>
