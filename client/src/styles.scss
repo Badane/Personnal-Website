@@ -27,6 +27,19 @@ body,.mat-body,.mat-typography{
     }
 }
 
+/* Modal utilities */
+.mshow {
+    display: block;
+}
+
+.mhidden {
+    display: none;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
 /*default*/
 html, body { height: 100%; }
 body { 

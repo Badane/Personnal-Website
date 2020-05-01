@@ -9,21 +9,23 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PicturesComponent } from './pictures/pictures.component';
-import { PicturesDetailsComponent } from './pictures-details/pictures-details.component';
 import { IndexComponent } from './index/index.component';
 import { TopMenuComponent } from './top-menu/top-menu.component';
 import { AboutComponent } from './about/about.component';
 import { WorkComponent } from './work/work.component';
+import { ModalGalleryComponent } from './modal-gallery/modal-gallery.component';
+import { ClickStopPropagationDirective } from './click-stop-propagation.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     PicturesComponent,
-    PicturesDetailsComponent,
     IndexComponent,
     TopMenuComponent,
     AboutComponent,
-    WorkComponent
+    WorkComponent,
+    ModalGalleryComponent,
+    ClickStopPropagationDirective
   ],
   imports: [
     BrowserModule,

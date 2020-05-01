@@ -1,0 +1,32 @@
+<div class="modal">
+    <div class="modal-body" (click)="close()">
+        <div class="modal-navigation">
+            <!-- <button appClickStopPropagation (click)="previous()" [ngClass]="{'invisible':galleryIndex < 1}">précédent</button> -->
+            <div class="navigation-arrow">
+                <div class="arrow left" appClickStopPropagation (click)="previous()" [ngClass]="{'invisible':galleryIndex < 1}">
+                    <div class="arrow-top"></div>
+                    <div class="arrow-bottom"></div>
+                </div>
+            </div>
+            <div class="picture-container">
+                <img src="{{imageUrl}}" alt="{{imageAlt}}" appClickStopPropagation>
+                <div class="cross">
+                    <div id="custom-cross" appClickStopPropagation (click)="close()">
+                        <div id="lightsaber">
+                            <div class="saber red"></div>
+                            <div class="saber blue"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navigation-arrow right">
+                <div class="arrow right" appClickStopPropagation (click)="next()" [ngClass]="{'invisible':galleryIndex >= galleryList.length -1}">
+                    <div class="arrow-top"></div>
+                    <div class="arrow-bottom"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="modal-background"></div>

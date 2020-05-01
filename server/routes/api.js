@@ -18,12 +18,14 @@ io.on('connection', function (socket) {
     });
 });
 
-// list data
+// get MongoDB pictures info
 router.get('/', function(req, res) {
     Picture.find(function (err, pictures) {
         if (err) return next(err);
         res.json(pictures);
     });
 });
+
+
 
 module.exports = router;

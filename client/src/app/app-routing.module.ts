@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PicturesComponent } from './pictures/pictures.component';
-import { PicturesDetailsComponent } from './pictures-details/pictures-details.component';
 import { IndexComponent } from './index/index.component';
 import { AboutComponent } from './about/about.component';
 import { WorkComponent } from './work/work.component';

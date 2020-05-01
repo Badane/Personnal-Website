@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "nodemon ./server/www.js",
-    "start": "node ./server/www.js",
-    "both" : "concurrently \"cd ./client && ng serve\" \"nodemon ./server/www.js\""
+    "dev": "nodemon ./server/server.js",
+    "start": "node ./server/server.js",
+    "both" : "concurrently \"cd ./client && ng serve\" \"nodemon ./server/server.js\""
   },
   "dependencies": {
     "concurrently": "^5.1.0",
