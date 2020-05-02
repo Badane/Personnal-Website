@@ -15,6 +15,7 @@ import { AboutComponent } from './about/about.component';
 import { WorkComponent } from './work/work.component';
 import { ModalGalleryComponent } from './modal-gallery/modal-gallery.component';
 import { ClickStopPropagationDirective } from './click-stop-propagation.directive';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ClickStopPropagationDirective } from './click-stop-propagation.directiv
     AboutComponent,
     WorkComponent,
     ModalGalleryComponent,
-    ClickStopPropagationDirective
+    ClickStopPropagationDirective,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

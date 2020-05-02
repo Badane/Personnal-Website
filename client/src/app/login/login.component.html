@@ -1,0 +1,17 @@
+<div class="login-container">
+    <div class="overlay" id="overlay">
+        <div class="sign-in" id="sign-in">
+            <h1>Bienvenue!</h1>
+            <p>Ce site est encore en cours de développement. Revenez très vite, je suis sûr qu'il vous plaira.</p>
+        </div>
+    </div>
+    <div class="form">
+        <div class="sign-in" id="sign-in-info">
+        <h1>Connexion</h1>
+        <form id="sign-in-form" (submit)="login()">      
+            <input type="password"  name="password" required="required" placeholder="Mot de passe" [(ngModel)]="credentials.password"/>
+            <button class="control-button in" type="submit">Entrer</button>
+        </form>
+        </div>
+    </div>
+</div>
