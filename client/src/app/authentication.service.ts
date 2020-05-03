@@ -22,7 +22,7 @@ export interface TokenPayload {
 	name?: string;
 }
 
-const authUrl = 'http://localhost/auth/';
+const authUrl = 'http://localhost/auth';
 
 @Injectable({
   	providedIn: 'root'
