@@ -8,7 +8,7 @@ import { Picture } from './models/picture';
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
-const apiUrl = 'http://localhost:3000/api/';
+const apiUrl = 'http://localhost/api/';
 
 @Injectable({
   providedIn: 'root'

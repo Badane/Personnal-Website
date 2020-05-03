@@ -6,7 +6,7 @@
     "server-dev": "nodemon ./server/server.js",
     "both-dev": "concurrently \"cd ./client && ng serve\" \"nodemon ./server/server.js\"",
     "final-dev": "concurrently \"cd ./client && ng build\" \"nodemon ./server/server.js\"",
-    "final-prod": "concurrently \"cd ./client && ng build --prod\" \"nodemon ./server/server.js\""
+    "final-prod": "concurrently \"cd ./client && ng build --prod\" \"node ./server/server.js\""
   },
   "dependencies": {
     "concurrently": "^5.1.0",
