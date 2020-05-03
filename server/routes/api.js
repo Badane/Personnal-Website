@@ -1,5 +1,5 @@
 var express = require('express');
-var Picture = require('../models/Picture.js');
+var Picture = require('../models/picture.js');
 
 var router = express.Router();
 
