@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 export interface UserDetails {
 	_id: string;
@@ -22,7 +23,7 @@ export interface TokenPayload {
 	name?: string;
 }
 
-const authUrl = 'http://localhost/auth';
+const authUrl = environment.url+'/auth';
 
 @Injectable({
   	providedIn: 'root'

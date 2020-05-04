@@ -1,4 +1,6 @@
 export const environment = {
   production: true,
-  doAuth:false
+  doAuth:false,
+  url:"http://dannbonderff.fr"
+
 };

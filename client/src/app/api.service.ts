@@ -4,11 +4,12 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { catchError, tap, map } from 'rxjs/operators';
 
 import { Picture } from './models/picture';
+import { environment } from 'src/environments/environment';
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
-const apiUrl = 'http://localhost/api/';
+const apiUrl = environment.url+'/api/';
 
 @Injectable({
   providedIn: 'root'
