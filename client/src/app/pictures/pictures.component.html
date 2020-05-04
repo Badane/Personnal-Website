@@ -6,7 +6,7 @@
 		<div class="col-sm-12 no-gutters">
 			<div class="col-sm-6 col-lg-4 col-xl-3 picture" *ngFor="let image of visibleImages">
 				<div (click)="focusOnPicture(image.id)">
-					<img src="{{image.url}}" alt="{{image.alt}}" [@fadeIn]=visiblePicture>
+					<img src="{{image.urlPreview}}" alt="{{image.alt}}" [@fadeIn]=visiblePicture>
 				</div>
 			</div>
 		</div>

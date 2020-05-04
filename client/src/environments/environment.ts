@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   doAuth:true,
-  url:"http://dannbonderff.fr"
+  url:"http://localhost"
 };
 
 /*

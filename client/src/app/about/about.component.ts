@@ -8,7 +8,7 @@ import { trigger, state, style, transition, animate, AnimationEvent } from '@ang
   animations: [
     trigger('fadeDev', [
       state('visible', style({
-        opacity:1
+		opacity:1
       })),
       state('hidden', style({
         opacity:0

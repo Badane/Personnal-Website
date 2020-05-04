@@ -41,7 +41,7 @@ export class ModalGalleryComponent implements OnInit {
 		this.el.nativeElement.classList.add('mshow');
 		this.el.nativeElement.classList.remove('mhidden');
 
-		this.imageUrl = this.galleryList[this.galleryIndex].url;
+		this.imageUrl = this.galleryList[this.galleryIndex].urlFull;
 		this.imageAlt = this.galleryList[this.galleryIndex].alt;
 	}
 	
