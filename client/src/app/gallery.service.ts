@@ -28,7 +28,7 @@ export class GalleryService {
 const IMAGES =[
     {"id":1,"urlPreview":"../../assets/images/gallery/preview/DSCF0262.jpg","urlFull":"../../assets/images/gallery/full/DSCF0262.jpg","alt":"photo-DSCF0262"},
     {"id":2,"urlPreview":"../../assets/images/gallery/preview/DSCF0470.jpg","urlFull":"../../assets/images/gallery/full/DSCF0470.jpg","alt":"photo-DSCF0470"},
-    {"id":3,"urlPreview":"../../assets/images/gallery/preview/DSCF0470.jpg","urlFull":"../../assets/images/gallery/full/DSCF0470.jpg","alt":"photo-DSCF0470"},
+    {"id":3,"urlPreview":"../../assets/images/gallery/preview/DSCF0816.jpg","urlFull":"../../assets/images/gallery/full/DSCF0816.jpg","alt":"photo-DSCF0816"},
     {"id":4,"urlPreview":"../../assets/images/gallery/preview/DSCF0919.jpg","urlFull":"../../assets/images/gallery/full/DSCF0919.jpg","alt":"photo-DSCF0919"},
     {"id":5,"urlPreview":"../../assets/images/gallery/preview/DSCF0938.jpg","urlFull":"../../assets/images/gallery/full/DSCF0938.jpg","alt":"photo-DSCF0938"},
     {"id":6,"urlPreview":"../../assets/images/gallery/preview/DSCF1109.jpg","urlFull":"../../assets/images/gallery/full/DSCF1109.jpg","alt":"photo-DSCF1109"},

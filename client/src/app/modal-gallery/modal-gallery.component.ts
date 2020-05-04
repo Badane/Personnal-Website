@@ -55,7 +55,7 @@ export class ModalGalleryComponent implements OnInit {
 	next(){
 		if(this.galleryIndex < this.galleryList.length - 1){
 			this.galleryIndex ++;
-			this.imageUrl = this.galleryList[this.galleryIndex].url;
+			this.imageUrl = this.galleryList[this.galleryIndex].urlFull;
 			this.imageAlt = this.galleryList[this.galleryIndex].alt;
 		}
 	}
@@ -63,7 +63,7 @@ export class ModalGalleryComponent implements OnInit {
 	previous(){
 		if(this.galleryIndex > 0 ){
 			this.galleryIndex --;
-			this.imageUrl = this.galleryList[this.galleryIndex].url;
+			this.imageUrl = this.galleryList[this.galleryIndex].urlFull;
 			this.imageAlt = this.galleryList[this.galleryIndex].alt;
 		}
 	}
