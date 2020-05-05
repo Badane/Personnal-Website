@@ -30,6 +30,12 @@ app.use(passport.initialize());
 app.use('/api', apiRouter);
 app.use('/auth', authRouter);
 
+//Serve acme-challenge file for https certification
+app.use(express.static(path.join(__dirname, '/.well-known')));
+app.get('/.well-known/*', (req,res) => {
+    res.send(path.join(__dirname, req.url));
+});
+
 //Serve angular build project as static ressource - front end
 app.use(express.static(path.join(__dirname, '../client/dist/client')));
 app.get('*', (req,res) => {
