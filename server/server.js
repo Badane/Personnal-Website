@@ -3,6 +3,7 @@
 //dependencies.
 var app = require('./www');
 var express = require('express');
+var path = require('path');
 var debug = require('debug')('website3:server');
 var mongo = require('mongoose');
 var fs = require('fs');
@@ -44,7 +45,7 @@ if(env === 'production'){
 	redirApp.get('*', function(req, res) {  
 		res.redirect('https://' + req.headers.host + req.url);
 	})
-	
+
 	var server = http.createServer(redirApp);
 	var httpPort = normalizePort(process.env.HTTPPORT || '80');
 	server.listen(httpPort);
