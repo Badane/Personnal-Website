@@ -10,16 +10,19 @@ var https = require('https');
 
 var env = process.env.NODE_ENV || 'development';
 
-//Set ssl certificate keys
+//Create HTTP server.
+var server = http.createServer(app);
+
+//Create HTTPS server
 if(env === 'production'){
 	const privateKey = fs.readFileSync('/etc/letsencrypt/live/dannbonderff.fr/privkey.pem', 'utf8');
 	const certificate = fs.readFileSync('/etc/letsencrypt/live/dannbonderff.fr/cert.pem', 'utf8');
 	const ca = fs.readFileSync('/etc/letsencrypt/live/dannbonderff.fr/chain.pem', 'utf8');
 
 	const credentials = {
-	key: privateKey,
-	cert: certificate,
-	ca: ca
+		key: privateKey,
+		cert: certificate,
+		ca: ca
 	};
 
 	var httpsPort = normalizePort(process.env.HTTPSPORT || '443');
@@ -29,17 +32,18 @@ if(env === 'production'){
 	//Debug
 	httpsServer.on('error', onError);
 	httpsServer.on('listening', onListening);
-}
 
+	// set up a route to redirect http to https
+	server.get('*', function(req, res) {  
+    	res.redirect('https://' + req.headers.host + req.url);
+	})
+}
 
 //Get port from environment and store in Express.
 var httpPort = normalizePort(process.env.HTTPPORT || '80');
-
-//Create HTTP server.
-var server = http.createServer(app);
-
 //Listen on provided port, on all network interfaces.
 server.listen(httpPort);
+
 
 //Debug
 server.on('error', onError);

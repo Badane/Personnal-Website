@@ -22,7 +22,6 @@ export class ModalGalleryComponent implements OnInit {
 	}
 
 	close(){
-		console.log('cllose');
 		let body  = document.getElementsByTagName('body');
 		body[0].classList.remove('modal-open');
 		
@@ -34,7 +33,6 @@ export class ModalGalleryComponent implements OnInit {
 	}
 
 	show(galleryList:any[],selectedId:number){
-		console.log('show');
 		this.galleryList = galleryList;
 		this.galleryIndex = this.galleryList.findIndex(el=> el.id == selectedId);
 
