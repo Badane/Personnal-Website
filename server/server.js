@@ -2,6 +2,7 @@
 
 //dependencies.
 var app = require('./www');
+var express = require('express');
 var debug = require('debug')('website3:server');
 var mongo = require('mongoose');
 var fs = require('fs');
@@ -9,9 +10,6 @@ var http = require('http');
 var https = require('https');
 
 var env = process.env.NODE_ENV || 'development';
-
-//Create HTTP server.
-var server = http.createServer(app);
 
 //Create HTTPS server
 if(env === 'production'){
@@ -33,21 +31,36 @@ if(env === 'production'){
 	httpsServer.on('error', onError);
 	httpsServer.on('listening', onListening);
 
-	// set up a route to redirect http to https
-	server.get('*', function(req, res) {  
-    	res.redirect('https://' + req.headers.host + req.url);
+	/* Set the HTTP SERVER */
+	redirApp = express();
+	
+	//Routes
+	//Serve acme-challenge file for https certification
+	app.use(express.static(path.join(__dirname, '/.well-known')));
+	app.get('/.well-known/*', (req,res) => {
+		res.send(path.join(__dirname, req.url));
+	});
+	// Set up a route to redirect http to https
+	redirApp.get('*', function(req, res) {  
+		res.redirect('https://' + req.headers.host + req.url);
 	})
+	
+	var server = http.createServer(redirApp);
+	var httpPort = normalizePort(process.env.HTTPPORT || '80');
+	server.listen(httpPort);
 }
+else{
+	//Create HTTP server.
+	var server = http.createServer(app);
+	//Get port from environment and store in Express.
+	var httpPort = normalizePort(process.env.HTTPPORT || '80');
+	//Listen on provided port, on all network interfaces.
+	server.listen(httpPort);
 
-//Get port from environment and store in Express.
-var httpPort = normalizePort(process.env.HTTPPORT || '80');
-//Listen on provided port, on all network interfaces.
-server.listen(httpPort);
-
-
-//Debug
-server.on('error', onError);
-server.on('listening', onListening);
+	//Debug
+	server.on('error', onError);
+	server.on('listening', onListening);
+}
 
 //Mongo Connection
 mongo.connect('mongodb://localhost/website', {useNewUrlParser:true,useUnifiedTopology:true}).then(()=>{
