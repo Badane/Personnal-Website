@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "server-dev": "nodemon ./server/server.js",
+    "server-prod": "NODE_ENV=production node ./server/server.js",
     "both-dev": "concurrently \"cd ./client && ng serve\" \"nodemon ./server/server.js\"",
+    "both-prod": "concurrently \"cd ./client && ng serve --prod\" \"NODE_ENV=production node ./server/server.js\"",
     "final-dev": "concurrently \"cd ./client && ng build\" \"nodemon ./server/server.js\"",
-    "final-prod": "concurrently \"cd ./client && ng build --prod\" \"node ./server/server.js\""
+    "final-prod": "concurrently \"cd ./client && ng build --prod\" \"NODE_ENV=production node ./server/server.js\""
   },
   "dependencies": {
     "concurrently": "^5.1.0",

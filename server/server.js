@@ -3,18 +3,45 @@
 //dependencies.
 var app = require('./www');
 var debug = require('debug')('website3:server');
-var http = require('http');
 var mongo = require('mongoose');
+var fs = require('fs');
+var http = require('http');
+var https = require('https');
+
+var env = process.env.NODE_ENV || 'development';
+
+//Set ssl certificate keys
+if(env === 'production'){
+	const privateKey = fs.readFileSync('/etc/letsencrypt/live/dannbonderff.fr/privkey.pem', 'utf8');
+	const certificate = fs.readFileSync('/etc/letsencrypt/live/dannbonderff.fr/cert.pem', 'utf8');
+	const ca = fs.readFileSync('/etc/letsencrypt/live/dannbonderff.fr/chain.pem', 'utf8');
+
+	const credentials = {
+	key: privateKey,
+	cert: certificate,
+	ca: ca
+	};
+
+	var httpsPort = normalizePort(process.env.HTTPSPORT || '443');
+	var httpsServer = https.createServer(credentials, app);
+	httpsServer.listen(httpsPort);
+
+	//Debug
+	httpsServer.on('error', onError);
+	httpsServer.on('listening', onListening);
+}
+
 
 //Get port from environment and store in Express.
-var port = normalizePort(process.env.PORT || '80');
-app.set('port', port);
+var httpPort = normalizePort(process.env.HTTPPORT || '80');
 
 //Create HTTP server.
 var server = http.createServer(app);
 
 //Listen on provided port, on all network interfaces.
-server.listen(port);
+server.listen(httpPort);
+
+//Debug
 server.on('error', onError);
 server.on('listening', onListening);
 
