@@ -1,6 +1,14 @@
 @import "../../variables.scss";
 
-.pageOption {
+.index{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.background {
     overflow: hidden;
     position:fixed;
     padding:0;
@@ -9,32 +17,29 @@
     left:0; 
     width: 100%; 
     height: 100%;
+    background-color: $mainLightGrey;
 }
 
-.option{
+.bg-part{
     overflow: hidden;
     position: absolute;
 }
-.option, .option img { 
+.bg-part, .bg-part img { 
     width: 100%; 
     height: 100%;
     object-fit : cover;
 }
-.option img { 
+.bg-part img { 
     opacity: .10; 
     z-index: -1;
 }
 
-.option:first-child {
+.bg-part:first-child {
     background-color: #000000;
-    left: -30%;
+    left: -25%;
     transform-origin: 0 100%;
 }
-.option:last-child {
-    right: -40%;
-    transform-origin: 100% 0;
-    background-color: #dbdbdb;
-    
+.bg-part:last-child {
     .texture{
         width: 100%; 
         height: 100%;
@@ -43,62 +48,102 @@
         opacity: .03;
     }
 }
-.option img, .option div, .option:after {
+.bg-part img, .bg-part div, .bg-part:after {
     transform-origin: inherit;
+}
+
+.illustration{
+    height:70vh ;
+    width:33vw ;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    img{
+        max-height:100% ;
+        max-width:100% ;
+        height: auto;
+        width: auto;
+        opacity: 1;
+    }
 }
 
 .info-layer{
     width: 100%;
     height: 100%;
     position: absolute;
-    top: 0; 
-    left: 0;
-    margin: 0;
 
-    font-family: $titleFont !important;
     text-transform: uppercase;
 }
 .title{
+    font-family: $titleFont !important;
     color: white;
+
+    width: 100%;
+    height: 100%;
     
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
-    width: fit-content;
-
-    padding-left: 5vw;
 
     h1{
-        font-size: 3em;
+        font-size: 2.5em;
         line-height: 0.9em;
-        margin-top: 20vh;
         letter-spacing: -0.08em;
         font-family: $titleFont !important;
     }
     img{
-        height: 7em;
-        width: 7em;
-        margin-top: 15vh;
+        height: 4.5em;
+        width: 4.5em;
+        margin-bottom: 1.5em;
     }
 }
-@media only screen and (max-width:734px){
-    .title{
-        align-items: flex-start;
-    }       
-}
+// @media only screen and (max-width:734px){
+//     .title{
+//         align-items: flex-start;
+//     }       
+// }
+
 .description{
     color: #2d2d2d;
 
+    width: 33%;
+    position: absolute;
+    right: 2em;
+    bottom : 75%;
+
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     flex-direction: column;
-    padding-right: 5vw;
+
+    font-family: $subtitleFont;
+    font-size: 1.2em;
+    font-weight: 200;
+
+    .subtitle{
+        max-width: 100%;
+    }
     h2{
-        font-size: 1.8em;
-        margin-top: 12vh;
+        font-family: $subtitleFont !important;
+        font-size: 1.2em;
         letter-spacing: -0.05em;
-        font-family: $titleFont !important;
-        -webkit-text-stroke: 1px white;
+        font-weight: 200;
+    }
+    .main-subtitle{
+        display:flex;
+        justify-content: space-between;
+        width: 100%;
+        h2{
+            color:$mainGreen;
+            font-weight: 500;
+            letter-spacing: 0;
+            float: left;
+        }
+        span{
+            font-size: 1.2em; 
+        }
     }
 }

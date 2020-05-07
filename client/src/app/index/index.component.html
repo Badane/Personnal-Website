@@ -1,34 +1,36 @@
-<div class="container">
-    <div class='pageOption' #pageOption>
+<div class="index">
+    <div class='background' #pageOption>
         <a  href='#' 
-            class='option' 
+            class='bg-part' 
             [ngStyle]="{'transform': 'skewX(' + skewX + 'deg)'}">
             <img    src='../../assets/images/background-index-LOW.jpg'
                     alt="background_desktop"
                     [ngStyle]="{'transform': 'skewX(-' + skewX + 'deg)'}">
         </a>
-        <a class='option'
-            [ngStyle]="{'transform': 'skewX(' + skewX + 'deg)'}">
-            <div    class="texture"
-                    [ngStyle]="{'transform': 'skewX(-' + skewX + 'deg)'}">
+        <a class='bg-part'>
+            <div class='illustration'>
+                <img src="../../assets/images/profile-600.png" alt="profile">
             </div>
+            <div class="texture"></div>
         </a>
     </div>
-    <div class="row">
+    <div>
         <div class="info-layer">
-            <div class="col-sm-7">
-                <div class="title">
-                    <h1>Dann Bonderff</h1>
-                    <img src="../../assets/images/logoBlanc.png" alt="logo_db">
-                </div>
+            <div class="col-sm-7 title">
+                <img src="../../assets/images/sceauBlanc-600.png" alt="logo_db">
+                <h1>Dann Bonderff</h1>
             </div>
         </div>
-        <div class="info-layer description">
-            <div>
-                <h2>Développeur Web</h2>
-            </div>
-            <div>
-                <h2>Photographe Amateur</h2>
+        <div class="info-layer">
+            <div class="description">
+                <div class="subtitle">
+                    <div class="main-subtitle">
+                        <h2>Développeur Web</h2> <span>&nbsp;&</span>
+                    </div>
+                    <div>
+                        <h2>Photographe Amateur</h2>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

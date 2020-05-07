@@ -29,7 +29,8 @@ export class IndexComponent implements OnInit {
 	defineAngleDivision(){
 		var viewHeight = this.elementView.nativeElement.offsetHeight;
 		var viewWidth = this.elementView.nativeElement.offsetWidth;
-		this.skewX = 90 - (Math.atan(viewHeight/(viewWidth*0.3))*(180/Math.PI));
+		var angle = (Math.atan(viewWidth*0.25/viewHeight))*(180/Math.PI);
+		this.skewX = angle ;
 	}
 
 }
