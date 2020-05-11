@@ -1,14 +1,39 @@
 <div class="top-menu" *ngIf='isLogged'>
-    <div>
-        <nav>
+    <!-- <div class="menu header">
+        <div class="burger-container">
+            <div id="burger">
+                <div class="bar topBar"></div>
+                <div class="bar btmBar"></div>
+            </div>
+        </div>
+        <div class="icon icon-apple"></div>
+        <ul class="menu">
+            <li class="menu-item"><a href="#">Mac</a></li>
+            <li class="menu-item"><a href="#">iPad</a></li>
+            <li class="menu-item"><a href="#">iPhone</a></li>
+            <li class="menu-item"><a href="#">Watch</a></li>
+            <li class="menu-item"><a href="#">TV</a></li>
+            <li class="menu-item"><a href="#">Music</a></li>
+            <li class="menu-item"><a href="#">Support</a></li>
+        </ul>
+        <div class="shop icon icon-bag"></div>
+    </div> -->
+    <div (click)='close()'>
+        <nav class="header">
+            <div class="burger-container" appClickStopPropagation (click)="activeMenu()">
+                <div id="burger">
+                    <div class="bar topBar"></div>
+                    <div class="bar btmBar"></div>
+                </div>
+            </div>
             <a [routerLink]="['/']" class="home-button">
                 <img src="../../assets/images/logoBlanc-200.png" alt="home-button">
             </a>
-            <ul>
-                <li><a [routerLink]="['apropos']" [routerLinkActive]="['active-link']" [routerLinkActiveOptions]="{exact: true}">A propos</a></li>
-                <li><a [routerLink]="['travail']" [routerLinkActive]="['active-link']" [routerLinkActiveOptions]="{exact: true}">Travail</a></li>
-                <li><a href="../../assets/documents/CV_Dann_Bonderff.pdf" target="CV">CV</a></li>
-                <li><a [routerLink]="['photos']" [routerLinkActive]="['active-link']">Photos</a></li>
+            <ul class='menu'>
+                <li class="menu-item"><a [routerLink]="['apropos']" [routerLinkActive]="['active-link']" [routerLinkActiveOptions]="{exact: true}">A propos</a></li>
+                <li class="menu-item"><a [routerLink]="['travail']" [routerLinkActive]="['active-link']" [routerLinkActiveOptions]="{exact: true}">Travail</a></li>
+                <li class="menu-item"><a href="../../assets/documents/CV_Dann_Bonderff.pdf" target="CV">CV</a></li>
+                <li class="menu-item"><a [routerLink]="['photos']" [routerLinkActive]="['active-link']">Photos</a></li>
             </ul>
         </nav>
     </div>

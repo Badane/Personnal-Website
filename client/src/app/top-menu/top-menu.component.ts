@@ -10,16 +10,29 @@ import { environment } from 'src/environments/environment';
 })
 export class TopMenuComponent implements OnInit {
 	isLogged:boolean;
+	header:any;
 
 	constructor(private authService: AuthenticationService) { }
 
 	ngOnInit(){}
+	
+	ngAfterViewInit(): void{
+		this.header = document.querySelector('.header');
+	}
 
 	ngDoCheck(){
 		if(environment.doAuth)
 			this.isLogged = this.authService.isLoggedIn();
 		else
 			this.isLogged = true;
+	}
+
+	activeMenu(){
+		this.header.classList.toggle('menu-opened');
+	}
+
+	close(){
+		this.header.classList.remove('menu-opened');
 	}
 	
 
