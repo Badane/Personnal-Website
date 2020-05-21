@@ -109,6 +109,11 @@ h2{
     border-top: 2px solid #fff;
 }
 
+.portrait{
+    color:$mainDark;
+    height: 0;
+}
+
 @media screen and (max-width:734px), screen and (orientation : portrait)  {
     .background{
       position: relative;
@@ -116,5 +121,86 @@ h2{
   
     .content{
       flex-direction: column;
+      padding: 0;
+    }
+
+    .col-sm-6{
+        width: 100%;
+        max-width: 100%;
+        flex:initial;
+        .title,.description{
+            // padding-left: 3em 1.5em 0 1.5em
+            padding-right: 1.5em;
+            padding-left: 1.5em;
+        }
+        .title{
+            padding-top: 3em;
+        }
+    }
+
+    .bd-r{
+        border-right: 0px solid #fff;
+        text-align: justify;
+        h2{
+            text-align: left;
+        }
+    }
+
+    .bd-l{
+        border-left: 0px solid #fff;
+        text-align: justify;
+        h2{
+            text-align: right;
+        }
+    }
+
+    .bd-t{
+        height: 3em;
+        border-top: 0px solid #fff;
+    }
+
+    .description{
+        padding-top: 2em;
+        padding-bottom: 2em;
+        &.left{
+            padding-right: 0;
+        }
+        &.right{
+            padding-left: 0;
+        }
+        p a{
+            border-bottom: 1px solid lightgrey;
+            &:hover{
+                color: white;
+                text-shadow: none !important;
+                border-bottom: 1px solid lightgrey;
+            }
+        }
+    }
+
+    .portrait{
+        height: initial;
+        &.p-bd-bl{
+            border-bottom: 2px solid #fff;
+            max-width: 50%;
+        }
+        &.p-bd-br{
+            margin-left: 50%;
+            border-bottom: 2px solid #fff;
+            max-width: 50%;
+        }
+    }
+
+    .custom-button{
+        bottom: -1.5em;
+        span{
+            box-shadow: inset 0 -3px 0.8em $mainDark;
+            img{
+                height: 2.8em;
+            }
+            &:hover{
+                background-color:white;
+            }
+        }
     }
 }
