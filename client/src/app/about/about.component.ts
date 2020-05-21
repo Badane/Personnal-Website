@@ -56,15 +56,15 @@ export class AboutComponent implements OnInit {
 		this.skewX = 90 - (Math.atan(viewHeight/(viewWidth*0.2))*(180/Math.PI));
 		this.skewY = Math.atan(50/(viewWidth))*(180/Math.PI);
 
-		if (window.getComputedStyle(this.background).getPropertyValue("position") !== "relative"){
-			//Desktop display
-			this.skewDiv = "skewX(-"+this.skewX+"deg)";
-			this.skewImg = "skewX("+this.skewX+"deg)";
-		}
-		else{
+		if ( viewWidth <= 734 || viewWidth < viewHeight){
 			//Mobile display
 			this.skewDiv = "skewY("+this.skewY+"deg)";
 			this.skewImg = "skewY(-"+this.skewY+"deg)";
+		}
+		else{
+			//Desktop display
+			this.skewDiv = "skewX(-"+this.skewX+"deg)";
+			this.skewImg = "skewX("+this.skewX+"deg)";
 		}
 	}
 
