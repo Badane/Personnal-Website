@@ -1,5 +1,5 @@
-import { Component, OnInit, HostListener, ViewChild } from '@angular/core';
-import * as io from 'socket.io-client';
+import { Component, OnInit, HostListener, ViewChild} from '@angular/core';
+// import * as io from 'socket.io-client';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 //Services
@@ -21,9 +21,9 @@ import { ModalGalleryComponent } from '../modal-gallery/modal-gallery.component'
 			})),
 			state('void',style({
 				opacity:0,
-				transform : "translateY(200%)"
+				// transform : "translateY(50%) translateX(50%)",
 			})),
-			transition('void=>visible', animate('1500ms'))
+			transition('void=>visible', animate('1000ms'))
 		])
 	]
 })
@@ -39,7 +39,7 @@ export class PicturesComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
-		this.loadingHeight = document.documentElement.offsetHeight*0.10;
+		this.defineScrollFadeIn()
 	}
 
 	ngAfterViewInit(){
@@ -51,11 +51,27 @@ export class PicturesComponent implements OnInit {
 		//In chrome and some browser scroll is given to body tag
 		let pos = (document.documentElement.scrollTop || document.body.scrollTop) + document.documentElement.offsetHeight;
 		let max = document.documentElement.scrollHeight;
+
 		if(pos > (max-this.loadingHeight) && max != this.oldMaxHeight)   {
 			this.oldMaxHeight = max;
 			
 			this.visibleImages = this.visibleImages.concat(this.gallery.getMoreImages(this.visibleImages.length));
 		}
+	}
+
+	@HostListener('window:resize',['$event'])
+	onResize(event:any){
+		this.defineScrollFadeIn();
+	}
+
+	defineScrollFadeIn(){
+		var viewHeight = document.documentElement.offsetHeight;
+		var viewWidth = document.documentElement.offsetWidth;
+		
+		if ( viewWidth <= 734 || viewWidth < viewHeight)
+			this.loadingHeight = document.documentElement.offsetHeight*0.20;
+		else
+			this.loadingHeight = document.documentElement.offsetHeight*0.10;
 	}
 
 	focusOnPicture(id:number){

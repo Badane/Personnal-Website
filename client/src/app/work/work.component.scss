@@ -1,4 +1,4 @@
- @import "../../variables.scss";
+@import "../../variables.scss";
 
 .background {
   position: absolute;;
@@ -129,7 +129,6 @@ h2{
         max-width: 100%;
         flex:initial;
         .title,.description{
-            // padding-left: 3em 1.5em 0 1.5em
             padding-right: 1.5em;
             padding-left: 1.5em;
         }

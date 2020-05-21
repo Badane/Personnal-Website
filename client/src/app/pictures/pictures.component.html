@@ -1,16 +1,32 @@
-<div class="row no-gutters">
-	<div class="col-sm-6 offset-sm-3 subtitle">
-		Mes photos en vrac
-	</div>
-	<div class="gallery">
-		<div class="col-sm-12 no-gutters">
-			<div class="col-sm-6 col-lg-4 col-xl-3 picture" *ngFor="let image of visibleImages">
+<div class="background">
+    <div class="content row">
+		<div class="title">
+			<h2>Mes photos en vrac</h2>
+		</div>
+		<div class="gallery col-sm-12 no-gutters row">
+			<div class="col-md-6 col-lg-4 col-xl-3 no-gutters picture" *ngFor="let image of visibleImages">
 				<div (click)="focusOnPicture(image.id)">
 					<img src="{{image.urlPreview}}" alt="{{image.alt}}" [@fadeIn]=visiblePicture>
 				</div>
 			</div>
 		</div>
-		<div class="col-sm-12 no-gutters loading-space"></div>
+
+
+		<!-- <div class="row no-gutters">
+			<div class="col-sm-6 offset-sm-3 subtitle">
+				Mes photos en vrac
+			</div>
+			<div class="gallery">
+				<div class="col-sm-12 no-gutters">
+					<div class="col-sm-6 col-lg-4 col-xl-3 picture" *ngFor="let image of visibleImages">
+						<div (click)="focusOnPicture(image.id)">
+							<img src="{{image.urlPreview}}" alt="{{image.alt}}" [@fadeIn]=visiblePicture>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-12 no-gutters loading-space"></div>
+			</div>
+		</div> -->
 	</div>
 </div>
 <app-modal-gallery></app-modal-gallery>
