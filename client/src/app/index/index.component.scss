@@ -91,14 +91,14 @@
     flex-direction: column;
 
     h1{
-        font-size: 2.5em;
+        font-size: 3.5em;
         line-height: 0.9em;
         letter-spacing: -0.08em;
         font-family: $titleFont !important;
     }
     img{
-        height: 4.5em;
-        width: 4.5em;
+        height: 8em;
+        width: 8em;
         margin-bottom: 1.5em;
     }
 }
@@ -117,7 +117,7 @@
     flex-direction: column;
 
     font-family: $subtitleFont;
-    font-size: 1.2em;
+    font-size: 1.5em;
     font-weight: 200;
 
     .subtitle{
@@ -133,6 +133,8 @@
         display:flex;
         justify-content: space-between;
         width: 100%;
+        align-items: center;
+        margin-bottom: 0.8em;
         h2{
             color:$mainGreen;
             font-weight: 500;
@@ -142,6 +144,10 @@
         span{
             font-size: 1.2em; 
         }
+    }
+
+    h2{
+        margin:0
     }
 }
     
@@ -192,9 +198,6 @@
 
         .main-subtitle{
             align-items: center;
-            h2{
-                margin:0
-            }
         }
         h2{
             margin:0

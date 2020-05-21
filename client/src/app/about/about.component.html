@@ -1,47 +1,55 @@
 <div class="background">
-    <div class="row">
-        <div class="toggle col-xl-6 offset-xl-3">
-            <label (click)="onToggleClick()">Developpeur</label>
-            <div class="toggle-body">
-                <div class="toggle-btn" (click)="onToggleClick()"></div>
-            </div>
-            <label (click)="onToggleClick()">Photographe</label>
-        </div>
-    </div>
     <div class="content"  #content>
-        <div class="sized-content" [ngStyle]="{'height': sizedContentHeight +'px'}">
-            <div class="description col-sm-6">
-                <div class="dev" *ngIf="displayDevDescription" [@fadeDev]=currentStateDev (@fadeDev.done)="onDevAnimationEvent($event)">
-                    <p>
-                        Passionné d’informatique depuis toujours, et de tout ce qui touche de près ou de loin au monde digital, je suis aujourd’hui <strong>Développeur Web Fullstack</strong> et <strong>Responsable Technique</strong> dans le monde des objets connectés.<br/><br/>  
-                        Ma formation d’ingénieur à l’ESIR de Rennes me donne les capacités d’analyse, d’adaptation, et de travail, nécessaires pour faire face à toute situation et définir les meilleures solutions existantes.<br/><br/>
-                        Fast learner, je m’épanouis au quotidien dans l’apprentissage de nouveaux outils et la création de nouvelles applications, seul ou avec mon équipe. 
+        <div class='illustration-dev'>
+            <div class='description-dev'>
+                <h2>Développeur</h2>
+                <p>
+                    Passionné d’informatique depuis toujours, et de tout ce qui touche de près ou de loin au monde digital, je suis aujourd’hui <strong>Développeur Web Fullstack</strong> et <strong>Responsable Technique</strong> dans le monde des objets connectés.<br/><br/>  
+                    Ma formation d’ingénieur à l’ESIR de Rennes me donne les capacités d’analyse, d’adaptation, et de travail, nécessaires pour faire face à toute situation et définir les meilleures solutions existantes.<br/><br/>
+                    Fast learner, je m’épanouis au quotidien dans l’apprentissage de nouveaux outils et la création de nouvelles applications, seul ou avec mon équipe. 
 
-                    </p>
-                </div>
-                <div class="photo" *ngIf="displayPhotoDescription" [@fadePhoto]=currentStatePhoto (@fadePhoto.done)="onPhotoAnimationEvent($event)">
-                    <p>
-                        La photographie a longtemps été pour moi synonyme de moments vécus au travers d’un viseur, pour plus tard réaliser de simples albums photos, qui vont finir par se perdre dans un placard.<br/>
-                        <i>« A quoi bon faire des photos alors ? Je préfère vivre pleinement ces instants et me les graver en mémoire ».</i><br/><br/>
-                        Mais en grandissant, je deviens de plus en plus sensible à l’art, aux images qui m’entourent et à l’émotion que celles-ci peuvent susciter chez soi, mais aussi, et surtout, chez les autres.<br/>
-                        La photographie s’est alors révélée à moi avec ses pleines possibilités et ses pouvoirs.
-                    </p>
-                </div>
+                </p>
             </div>
-    
-            <div class="illustration" [ngStyle]="{'transform': 'skewX(-' + skewX + 'deg)'}" #illustration>
-                <img    src="../../assets/images/background-about-dev-LOW.jpg" 
-                        alt="about-dev-illustration"
-                        [ngStyle]="{'transform': 'skewX(' + skewX + 'deg)'}"
-                        [hidden]="!displayDevIllustration"
-                        [@fadeDev]=currentStateDev>
-                <img    src="../../assets/images/background-about-photo-LOW.jpg" 
-                        alt="about-photo-illustration"
-                        [ngStyle]="{'transform': 'skewX(' + skewX + 'deg)'}"
-                        [hidden]="!displayPhotoIllustration"
-                        [@fadePhoto]=currentStatePhoto>
-            </div>
+            <img    src="../../assets/images/background-about-dev-LOW.jpg" 
+                    alt="about-photo-illustration"
+                    [@fadeIllustration]=stateDev>
         </div>
+        <div class="illustration-photo" 
+            [ngStyle]="{'transform': skewDiv}" 
+            (mouseover)="overPhoto()" 
+            (mouseout)='notOverPhoto()'>
+            <div class='description-photo' [ngStyle]="{'transform': skewImg}">
+                <h2>Photographe</h2>
+                <p>
+                    La photographie a longtemps été pour moi synonyme de moments vécus au travers d’un viseur, pour plus tard réaliser de simples albums photos, qui vont finir par se perdre dans un placard.<br/>
+                    <i>« A quoi bon faire des photos alors ? Je préfère vivre pleinement ces instants et me les graver en mémoire ».</i><br/><br/>
+                    Mais en grandissant, je deviens de plus en plus sensible à l’art, aux images qui m’entourent et à l’émotion que celles-ci peuvent susciter chez soi, mais aussi, et surtout, chez les autres.<br/>
+                    La photographie s’est alors révélée à moi avec ses pleines possibilités et ses pouvoirs.
+                </p>
+            </div>
+            <img    src="../../assets/images/background-about-photo-LOW.jpg" 
+                    alt="about-dev-illustration"
+                    [ngStyle]="{'transform': skewImg}"
+                    [@fadeIllustration]=statePhoto>
+        </div>
+        <!-- <div class="description col-sm-6">
+            <div class="dev" *ngIf="displayDevDescription" [@fadeDev]=currentStateDev (@fadeDev.done)="onDevAnimationEvent($event)">
+                <p>
+                    Passionné d’informatique depuis toujours, et de tout ce qui touche de près ou de loin au monde digital, je suis aujourd’hui <strong>Développeur Web Fullstack</strong> et <strong>Responsable Technique</strong> dans le monde des objets connectés.<br/><br/>  
+                    Ma formation d’ingénieur à l’ESIR de Rennes me donne les capacités d’analyse, d’adaptation, et de travail, nécessaires pour faire face à toute situation et définir les meilleures solutions existantes.<br/><br/>
+                    Fast learner, je m’épanouis au quotidien dans l’apprentissage de nouveaux outils et la création de nouvelles applications, seul ou avec mon équipe. 
+
+                </p>
+            </div>
+            <div class="photo" *ngIf="displayPhotoDescription" [@fadePhoto]=currentStatePhoto (@fadePhoto.done)="onPhotoAnimationEvent($event)">
+                <p>
+                    La photographie a longtemps été pour moi synonyme de moments vécus au travers d’un viseur, pour plus tard réaliser de simples albums photos, qui vont finir par se perdre dans un placard.<br/>
+                    <i>« A quoi bon faire des photos alors ? Je préfère vivre pleinement ces instants et me les graver en mémoire ».</i><br/><br/>
+                    Mais en grandissant, je deviens de plus en plus sensible à l’art, aux images qui m’entourent et à l’émotion que celles-ci peuvent susciter chez soi, mais aussi, et surtout, chez les autres.<br/>
+                    La photographie s’est alors révélée à moi avec ses pleines possibilités et ses pouvoirs.
+                </p>
+            </div>
+        </div> -->
     </div>
 </div>
 

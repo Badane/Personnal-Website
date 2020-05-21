@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AuthenticationService } from '../authentication.service';
 import { environment } from 'src/environments/environment';
@@ -11,13 +11,17 @@ import { environment } from 'src/environments/environment';
 export class TopMenuComponent implements OnInit {
 	isLogged:boolean;
 	header:any;
+	contentHeight: string;
 
-	constructor(private authService: AuthenticationService) { }
+	constructor(private authService: AuthenticationService, private cd: ChangeDetectorRef) { }
 
-	ngOnInit(){}
+	ngOnInit(){	}
 	
 	ngAfterViewInit(): void{
 		this.header = document.querySelector('.header');
+		var headerYPosition = this.header.getBoundingClientRect().bottom;
+		this.contentHeight = "calc(100% - "+headerYPosition+"px)";
+		this.cd.detectChanges();
 	}
 
 	ngDoCheck(){

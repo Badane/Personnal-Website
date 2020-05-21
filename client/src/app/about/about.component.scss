@@ -1,13 +1,7 @@
 @import "../../variables.scss";
-$pink: $mainGreen;
-$blue: $mainRed;
-
-$animtime: 1.5s;
-$easing: cubic-bezier(0.68, -0.15, 0.265, 1.35);
-$iteration: 1;
 
 .background {
-  position:fixed;
+  position: absolute;
   padding:0;
   margin:0;
   top:0;
@@ -15,121 +9,216 @@ $iteration: 1;
   width: 100%; 
   height: 100%;
 }
-// .background--on {
-//   background: rgba($pink,.1);
-//   transition: 1.5s $easing;
-// }
-.toggle-body {
-  width: 9rem;
-  height: 4rem;
-  background: white;
-  border-radius: 2rem;
-  // border: .5px solid rgba(117, 117, 117, 0.31);
-  box-shadow: inset 0px 0px 4px 0px rgba(0,0,0,0.2), 0 -3px 4px 0 rgba(0,0,0,0.2);
-  animation: angle-reverse $animtime $easing;
-}
-.toggle-body--on {
-  animation: angle $animtime $easing;
-  animation-direction: alternate;
-}
-.toggle-btn {
-  width: 2rem;
-  height: 2rem;
-  position: relative;
-  top: calc(50% - 2rem / 2);
-  left: calc(27% - 2rem / 2);
-  background: white;
-  border-radius: 2rem;
-  background: $blue;
-  cursor: pointer;
-  transform:  translateX(0);
-  transition: $animtime $easing;
-}
-.toggle-btn--on {
-  transition: $animtime $easing;
-  transform:  translateX(200%);
-  background: $pink;
-}
-
-@keyframes angle {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(10deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-@keyframes angle-reverse {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(-10deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
-.toggle{
-  height: fit-content;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin-top: 3em;
-
-  label{
-    font-size: 1em;
-    font-family: $titleFont;
-    letter-spacing: -0.05em;
-    text-transform: uppercase;
-    font-weight: 200;
-  }
-}
-
-.description{
-  overflow: visible;
-  text-align: justify;
-  margin-left: 5vw;
-  font-size: 0.6em;
-  padding-bottom: 20vh;
-}
 
 .content{
   width: 100%;
   height: 100%;
   position: relative;
-
-  .sized-content{
-    position: relative;
-    width: 100%;
-    display: flex;
-    align-items: center;
-  }
+  display: flex;
+  align-items: center;
+  background-color: $mainDark;
+  color: white;
 }
 
-.illustration{
+h2{
+  text-transform: uppercase;
+  color: $mainGreen;
+  font-size: 2em;
+}
+
+.illustration-dev{
+  width: 60%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  z-index: 8;
+  img{
+    height: 100%;
+    width: 100%;
+    object-fit : cover;
+    opacity: 0.5;
+  }
+  .description-dev{
+    z-index: 1;
+    position: absolute;
+    margin-left: 15vw;
+    margin-right: 15vw;
+    top: 20%;
+    h2{
+      margin-bottom: 1.25em;
+    }
+  }
+
+}
+
+.illustration-photo{
   overflow: hidden;
   position: absolute;
   top:0px;
-  left: 50%;
+  left: 40%;
   transform-origin:  0 100%;
   
-  width: 100%; 
+  width: 60%; 
   height: 100%;
   object-fit : cover;
+  z-index: 9;
+
+  background-color: $mainDark;
   
   img { 
     height: 100%;
     width: 100%;
     object-fit : cover;
     transform-origin: inherit;
+    opacity: 0.5;
   } 
+  .description-photo{
+    z-index: 1;
+    position: absolute;
+    margin-right: 24vw;
+    margin-left: 10vw;
+    bottom: 15%;
+    h2{
+      margin-bottom: 1.25em;
+    }
+  }
 }
 
-.dev p, .photo p{
-  transition: 1.5s $easing;
+@media screen and (max-width:734px), screen and (orientation : portrait)  {
+
+  body{
+    background-color: $mainDark;
+  }
+
+  .background{
+    position: relative;
+    height: initial;
+  }
+
+  .content{
+    flex-direction: column;
+  }
+  
+  .illustration-dev{
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    img{
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    $margin-bot : calc(3em + 50px);
+    .description-dev{
+      top : initial;
+      position: relative;
+      text-align: justify;
+      margin:3em 1.5em $margin-bot 1.5em;
+      h2{
+        text-align: center;
+      }
+    }
+  }
+
+  .illustration-photo{
+    width: 100%;
+    left:0;
+    top:-50px;
+    height: fit-content;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    img{
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    $margin-top : calc(2em + 50px);
+    .description-photo{
+      position: relative;
+      top:-25px;
+      text-align: justify;
+      margin:$margin-top 1.5em 3em 1.5em;
+      h2{
+        text-align: center;
+      }
+    }
+  }
+
 }
+
+
+
+// $pink: $mainGreen;
+// $blue: $mainRed;
+
+// $animtime: 1.5s;
+// $easing: cubic-bezier(0.68, -0.15, 0.265, 1.35);
+// $iteration: 1;
+// .background--on {
+//   background: rgba($pink,.1);
+//   transition: 1.5s $easing;
+// }
+// .toggle-body {
+//   width: 9rem;
+//   height: 4rem;
+//   background: white;
+//   border-radius: 2rem;
+//   // border: .5px solid rgba(117, 117, 117, 0.31);
+//   box-shadow: inset 0px 0px 4px 0px rgba(0,0,0,0.2), 0 -3px 4px 0 rgba(0,0,0,0.2);
+// }
+// .toggle-body--on {
+//   animation-direction: alternate;
+// }
+// .toggle-btn {
+//   width: 2rem;
+//   height: 2rem;
+//   position: relative;
+//   top: calc(50% - 2rem / 2);
+//   left: calc(27% - 2rem / 2);
+//   background: white;
+//   border-radius: 2rem;
+//   background: $blue;
+//   cursor: pointer;
+//   transform:  translateX(0);
+//   transition: $animtime $easing;
+// }
+// .toggle-btn--on {
+//   transition: $animtime $easing;
+//   transform:  translateX(200%);
+//   background: $pink;
+// }
+
+// .toggle{
+//   height: fit-content;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-around;
+//   margin-top: 3em;
+
+//   label{
+//     font-size: 1em;
+//     font-family: $titleFont;
+//     letter-spacing: -0.05em;
+//     text-transform: uppercase;
+//     font-weight: 200;
+//   }
+// }
+
+// .description{
+//   overflow: visible;
+//   text-align: justify;
+//   margin-left: 5vw;
+//   font-size: 0.6em;
+//   padding-bottom: 20vh;
+// }
+
+
+
+// .dev p, .photo p{
+//   transition: 1.5s $easing;
+// }
