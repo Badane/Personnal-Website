@@ -262,6 +262,9 @@ $awidth:3em;
 }
 
 @media screen and (max-width:734px), screen and (orientation : portrait)  {
+    .modal{
+        z-index: 910;
+    }
 
     .modal-navigation{
         width: 100%;
