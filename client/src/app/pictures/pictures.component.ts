@@ -23,7 +23,7 @@ import { ModalGalleryComponent } from '../modal-gallery/modal-gallery.component'
 				opacity:0,
 				// transform : "translateY(50%) translateX(50%)",
 			})),
-			transition('void=>visible', animate('1000ms'))
+			transition('void=>visible', animate('1500ms'))
 		])
 	]
 })
