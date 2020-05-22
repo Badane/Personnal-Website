@@ -5,6 +5,7 @@
             <div class="navigation-arrow">
                 <div class="arrow left" appClickStopPropagation (click)="previous()" [ngClass]="{'invisible':galleryIndex < 1}">
                     <div class="arrow-top"></div>
+                    <div class="p-arrow-top"></div>
                     <div class="arrow-bottom"></div>
                 </div>
             </div>
@@ -22,6 +23,7 @@
             <div class="navigation-arrow right">
                 <div class="arrow right" appClickStopPropagation (click)="next()" [ngClass]="{'invisible':galleryIndex >= galleryList.length -1}">
                     <div class="arrow-top"></div>
+                    <div class="p-arrow-top"></div>
                     <div class="arrow-bottom"></div>
                 </div>
             </div>
