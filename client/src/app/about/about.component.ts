@@ -19,14 +19,14 @@ import { trigger, state, style, transition, animate, AnimationEvent } from '@ang
   ]
 })
 export class AboutComponent implements OnInit {
-  background:any;
-  skewX:number;
-  skewY:number;
-  skewDiv:string;
-  skewImg:string;
-  @ViewChild('content',{read: ElementRef, static:false}) elementView: ElementRef;
-  stateDev:string;
-  statePhoto:string;
+	skewX:number;
+	skewY:number;
+	skewDiv:string;
+	skewImg:string;
+	@ViewChild('content',{read: ElementRef, static:false}) elementView: ElementRef;
+	@ViewChild('pSwitch',{read: ElementRef, static:false}) pSwitchIllustration: ElementRef;
+	stateDev:string;
+	statePhoto:string;
 
   	constructor(private cd: ChangeDetectorRef) { }
   
@@ -35,8 +35,6 @@ export class AboutComponent implements OnInit {
 		this.skewY = 10;
 		this.stateDev = "visible";
 		this.statePhoto = "hidden";
-
-		this.background = document.querySelector('.background');
 	  }
 
 	//Watch window size to redefine angle of picture
@@ -60,6 +58,7 @@ export class AboutComponent implements OnInit {
 			//Mobile display
 			this.skewDiv = "skewY("+this.skewY+"deg)";
 			this.skewImg = "skewY(-"+this.skewY+"deg)";
+			this.scrollSwitchIllustration();
 		}
 		else{
 			//Desktop display
@@ -68,6 +67,11 @@ export class AboutComponent implements OnInit {
 		}
 	}
 
+	@HostListener("window:scroll", ["$event"])
+		onWindowScroll() {
+			this.scrollSwitchIllustration();
+		}
+
 	overPhoto(){
 		this.stateDev = "hidden";
 		this.statePhoto = "visible";
@@ -75,6 +79,14 @@ export class AboutComponent implements OnInit {
 	notOverPhoto(){
 		this.stateDev = "visible";
 		this.statePhoto = "hidden";
+	}
+	scrollSwitchIllustration(){
+		if(this.pSwitchIllustration.nativeElement.getBoundingClientRect().y <= 0){
+			this.overPhoto();
+		}
+		else{
+			this.notOverPhoto();
+		}
 	}
 
 }
