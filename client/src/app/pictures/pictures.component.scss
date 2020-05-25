@@ -74,6 +74,8 @@ h2{
 @media screen and (max-width:734px), screen and (orientation : portrait)  {
     .background{
         position: relative;
+        min-height: 100%;
+        height: initial;
     }
 
     .content{

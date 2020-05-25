@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 //Components
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { WorkComponent } from './work/work.component';
 import { ModalGalleryComponent } from './modal-gallery/modal-gallery.component';
 import { ClickStopPropagationDirective } from './click-stop-propagation.directive';
 import { LoginComponent } from './login/login.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { LoginComponent } from './login/login.component';
     WorkComponent,
     ModalGalleryComponent,
     ClickStopPropagationDirective,
-    LoginComponent
+    LoginComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +39,7 @@ import { LoginComponent } from './login/login.component';
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

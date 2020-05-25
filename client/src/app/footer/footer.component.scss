@@ -1,0 +1,98 @@
+@import "../../variables.scss";
+
+.footer{
+    display: flex;
+    justify-content: center;
+    color: white;
+
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+    font-weight: 300;
+    p{
+        margin: 0;
+    }
+    opacity: 0.8;
+}
+.left-angle{
+    width: 30vw;
+    position: absolute;
+    bottom: 0;
+    left: 30vw;
+    background-color: $secondLightGrey;
+    transform: skewX(-45deg);
+    height: 100%;
+    // box-shadow: -2px -2px 3px white;
+    z-index: -1;
+}
+.right-angle{
+    z-index: -1;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 30vw;
+    width: 30vw;
+    background-color: $secondLightGrey;
+    transform: skewX(45deg);
+    // box-shadow: 0 -10px 10px -10px #ffffff;
+}
+
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 2vw;
+    background-color: $secondLightGrey;
+    width: 30vw;
+    font-size: 0.7em;
+    flex-wrap: wrap;
+    a{
+        text-decoration: none;
+        color: white;
+        &:hover{
+            cursor: pointer;
+            color:$secondGreen;
+        }
+    }
+
+}
+
+.icon{
+    font-size: 1.2em;
+}
+
+
+.logo-l-2,.logo-r-2{
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+@media screen and (max-width:734px), screen and (orientation : portrait)  {
+    .footer{
+        position: relative;
+        z-index: initial;
+        p{
+            z-index: 1000;
+        }
+    }
+
+    .right-angle{
+        right: 10vw;
+    }
+    .left-angle{
+        left: 10vw;
+    }
+    .content{
+        width: 70vw;
+    }
+
+    .icon:hover{
+        color:white;
+    }
+
+    .footer.p-index{
+        position: absolute;
+        bottom: 0;
+    }
+}
