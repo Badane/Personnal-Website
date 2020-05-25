@@ -85,10 +85,24 @@
     }
     .content{
         width: 70vw;
+        font-size: 0.9em;
+        a:hover{
+            color:white;
+        }   
     }
 
-    .icon:hover{
-        color:white;
+    .icon{
+        font-size: 1.4em;
+       
+    }
+
+    .info{
+        order: 5;
+        width: 100%;
+        text-align: center;
+    }
+    .logo-r-2{
+        margin-left: 0;
     }
 
     .footer.p-index{
