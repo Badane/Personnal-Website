@@ -62,6 +62,10 @@
     font-size: 1.2em;
 }
 
+.p-icon{
+    display: none;
+}
+
 
 .logo-l-2,.logo-r-2{
     margin-left: 1em;
@@ -77,6 +81,12 @@
         }
     }
 
+    .footer.p-index{
+        position: absolute;
+        bottom: 0;
+    }
+}
+@media screen and (max-width:734px), screen and (pointer:none), screen and (pointer:coarse)  {
     .right-angle{
         right: 10vw;
     }
@@ -86,27 +96,34 @@
     .content{
         width: 70vw;
         font-size: 0.9em;
+        justify-content: flex-start;
         a:hover{
             color:white;
         }   
     }
-
+    
     .icon{
         font-size: 1.4em;
-       
+        display: none;
     }
-
+    .p-icon{
+        display: initial;
+        font-size: 1.6em;
+        align-self: flex-start;
+    }
     .info{
+        position: relative;
         order: 5;
-        width: 100%;
         text-align: center;
-    }
-    .logo-r-2{
-        margin-left: 0;
+        margin: auto;
+        left: -0.7em
     }
 
-    .footer.p-index{
-        position: absolute;
-        bottom: 0;
+    .logo-l-2,.logo-r-2{
+        margin: 0;
+    }
+
+    .p-social-visible{
+        justify-content: space-between;
     }
 }
