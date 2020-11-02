@@ -5,6 +5,7 @@
   "scripts": {
     "server-dev": "nodemon ./server/server.js",
     "server-prod": "NODE_ENV=production node ./server/server.js",
+    "server-prod-w": "SET NODE_ENV=production&& node ./server/server.js",
     "both-dev": "concurrently \"cd ./client && ng serve\" \"nodemon ./server/server.js\"",
     "both-prod": "concurrently \"cd ./client && ng serve --prod\" \"NODE_ENV=production node ./server/server.js\"",
     "final-dev": "concurrently \"cd ./client && ng build\" \"nodemon ./server/server.js\"",
