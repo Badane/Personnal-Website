@@ -47,4 +47,8 @@ Thumbs.db
 
 # Custom
 # Photographs
-/src/assets/images/gallery
+/src/assets/images/gallery/*
+!/src/assets/images/gallery/full/
+!/src/assets/images/gallery/preview/
+/src/assets/images/gallery/full/*
+/src/assets/images/gallery/preview/*
