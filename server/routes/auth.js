@@ -7,7 +7,8 @@ var jwt = require('express-jwt');
 // Configuration to protect endpoint *NOT USED FOR THE MOMENT*
 var auth = jwt({
     secret: 'MY_SECRET',
-    userProperty: 'payload'
+    userProperty: 'payload',
+    algorithms: ['RS256']
 });
 
 
@@ -22,7 +23,6 @@ router.post('/register', function(req, res) {
 
     user.name = req.body.name;
     user.email = req.body.email;
-  
     user.setPassword(req.body.password);
   
     user.save(function(err) {
