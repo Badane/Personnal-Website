@@ -52,3 +52,5 @@ Thumbs.db
 !/src/assets/images/gallery/preview/
 /src/assets/images/gallery/full/*
 /src/assets/images/gallery/preview/*
+!/src/assets/images/gallery/full/.gitkeep
+!/src/assets/images/gallery/preview/.gitkeep
