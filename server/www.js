@@ -36,6 +36,12 @@ app.get('/.well-known/*', (req,res) => {
     res.sendFile(path.join(__dirname, req.url));
 });
 
+//Serve personnal uploaded files
+app.use(express.static(path.join(__dirname, '/uploads')));
+app.get('/uploads/*', (req,res) => {
+    res.sendFile(path.join(__dirname, req.url));
+});
+
 //Serve angular build project as static ressource - front end
 app.use(express.static(path.join(__dirname, '../client/dist/client')));
 app.get('*', (req,res) => {
